@@ -306,6 +306,108 @@ footer{background:#0a1325;color:#c5cad2;padding:48px 0 25px}
 @media(prefers-reduced-motion:reduce){
  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+
+
+/* =========================================
+   EMPYREAN PALACE — PREMIUM VISUAL FINISH
+   Responsive gallery + elegant 3D + glow
+========================================= */
+.gallery-grid{
+ display:grid !important;
+ grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+ grid-auto-rows:clamp(175px,19vw,245px) !important;
+ grid-auto-flow:row dense !important;
+ align-items:stretch !important;
+ align-content:start !important;
+ gap:clamp(10px,1.25vw,16px) !important;
+ width:100% !important;
+}
+.gallery-grid > .gallery-item,
+.gallery-grid > *{
+ grid-column:auto / span 1 !important;
+ grid-row:auto / span 1 !important;
+ width:100% !important;
+ min-width:0 !important;
+ min-height:0 !important;
+ height:100% !important;
+ overflow:hidden !important;
+ position:relative;
+ border-radius:3px;
+}
+.gallery-grid > .gallery-item .image-frame{
+ width:100% !important;
+ height:100% !important;
+ min-height:0 !important;
+}
+.gallery-grid > .gallery-item img{
+ display:block !important;
+ width:100% !important;
+ height:100% !important;
+ object-fit:cover !important;
+ transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease !important;
+}
+.gallery-grid > .gallery-item:hover img{
+ transform:scale(1.075) !important;
+ filter:saturate(1.12) contrast(1.04);
+}
+.gallery-grid > .gallery-item::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ opacity:0;
+ background:linear-gradient(135deg,rgba(232,214,173,.2),transparent 52%,rgba(16,27,50,.16));
+ transition:opacity .45s ease;
+}
+.gallery-grid > .gallery-item:hover::after{opacity:1}
+@media(max-width:900px){
+ .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;grid-auto-rows:clamp(170px,25vw,225px) !important}
+}
+@media(max-width:700px){
+ .gallery-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  grid-auto-rows:clamp(155px,42vw,225px) !important;
+  gap:10px !important;
+ }
+ .gallery-grid > .gallery-item:last-child:nth-child(odd){grid-column:1 / -1 !important}
+}
+@media(max-width:380px){.gallery-grid{grid-auto-rows:155px !important;gap:8px !important}}
+
+/* Gentle depth and premium card lighting */
+.venue-card,.event-card,.review,.amenity,.price-panel,.contact-form{
+ transform-style:preserve-3d;
+ backface-visibility:hidden;
+ transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease,filter .4s ease;
+}
+@media(hover:hover) and (pointer:fine){
+ .venue-card:hover,.event-card:hover,.review:hover,.price-panel:hover{
+  box-shadow:0 24px 55px rgba(16,27,50,.17);
+ }
+ .amenity:hover{box-shadow:0 12px 28px rgba(0,0,0,.18)}
+}
+.btn,.nav-cta{position:relative;overflow:hidden}
+.btn::after,.nav-cta::after{
+ content:"";position:absolute;top:-60%;left:-120%;width:45%;height:220%;
+ transform:rotate(25deg);pointer-events:none;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+ transition:left .75s ease;
+}
+.btn:hover::after,.nav-cta:hover::after{left:150%}
+.chat-launcher{animation:empyreanChatGlow 3.8s ease-in-out infinite}
+@keyframes empyreanChatGlow{
+ 0%,100%{box-shadow:0 8px 25px rgba(0,0,0,.19)}
+ 50%{box-shadow:0 8px 32px rgba(199,166,106,.28),0 0 0 7px rgba(199,166,106,.07)}
+}
+.float-wa{animation:empyreanWaPulse 3s ease-in-out infinite}
+@keyframes empyreanWaPulse{
+ 0%,100%{box-shadow:0 5px 18px rgba(0,0,0,.2)}
+ 50%{box-shadow:0 5px 25px rgba(32,184,90,.35),0 0 0 8px rgba(32,184,90,.07)}
+}
+#empyreanFireworks{position:fixed;inset:0;width:100%;height:100%;z-index:850;pointer-events:none}
+@media(prefers-reduced-motion:reduce){
+ .chat-launcher,.float-wa{animation:none !important}
+}
+
 </style>
 </head>
 
@@ -998,6 +1100,88 @@ Please contact me to discuss availability and packages. Thank you!`;
 
  botMessage("Your enquiry is ready to continue on WhatsApp. Thank you for considering The Empyrean Palace! ✨",[],600);
 }
+
+
+/* =========================================
+   PREMIUM 3D TILT + OCCASIONAL FIREWORKS
+   Independent of the existing concierge code
+========================================= */
+(function empyreanPremiumEffects(){
+ 'use strict';
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+ /* Subtle pointer-controlled 3D tilt on larger screens */
+ if(!reduced && finePointer){
+  document.querySelectorAll('.venue-card,.event-card,.review,.amenity').forEach(card=>{
+   card.addEventListener('pointermove',event=>{
+    const rect=card.getBoundingClientRect();
+    const px=(event.clientX-rect.left)/rect.width;
+    const py=(event.clientY-rect.top)/rect.height;
+    const ry=(px-.5)*4.5;
+    const rx=(.5-py)*4.5;
+    card.style.transform=`perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+   });
+   card.addEventListener('pointerleave',()=>{card.style.transform=''});
+  });
+ }
+
+ /* Respect reduced-motion and avoid running canvas animation unnecessarily */
+ if(reduced || !document.body) return;
+ const canvas=document.createElement('canvas');
+ canvas.id='empyreanFireworks';
+ canvas.setAttribute('aria-hidden','true');
+ document.body.appendChild(canvas);
+ const ctx=canvas.getContext('2d');
+ if(!ctx){canvas.remove();return;}
+ let w=0,h=0,dpr=1,particles=[],raf=0;
+ const palette=['#e8d6ad','#c7a66a','#fff4d5','#ffffff','#f0cf83'];
+ function resize(){
+  w=window.innerWidth;h=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,1.5);
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  canvas.style.width=w+'px';canvas.style.height=h+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+ }
+ resize();window.addEventListener('resize',resize,{passive:true});
+ function burst(x,y){
+  const count=w<600?24:34;
+  for(let i=0;i<count;i++){
+   const a=(Math.PI*2*i)/count;
+   const speed=1.1+Math.random()*2.7;
+   particles.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,
+    life:1,decay:.012+Math.random()*.012,size:1+Math.random()*1.7,
+    color:palette[Math.floor(Math.random()*palette.length)]});
+  }
+  if(!raf) animate();
+ }
+ function animate(){
+  ctx.clearRect(0,0,w,h);
+  particles=particles.filter(p=>p.life>0);
+  for(const p of particles){
+   p.x+=p.vx;p.y+=p.vy;p.vx*=.986;p.vy=p.vy*.986+.018;p.life-=p.decay;
+   ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;
+   ctx.shadowBlur=8;ctx.shadowColor=p.color;
+   ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+  }
+  ctx.globalAlpha=1;ctx.shadowBlur=0;
+  if(particles.length){raf=requestAnimationFrame(animate)}
+  else{cancelAnimationFrame(raf);raf=0;ctx.clearRect(0,0,w,h)}
+ }
+ function gentleBurst(){
+  if(!document.hidden) burst(w*(.2+Math.random()*.6),h*(.14+Math.random()*.3));
+ }
+ /* One small welcome sparkle, then rare celebratory bursts */
+ window.setTimeout(gentleBurst,3200);
+ (function schedule(){
+  window.setTimeout(()=>{gentleBurst();schedule()},26000+Math.random()*18000);
+ })();
+ /* Tiny celebratory burst when a primary CTA is clicked */
+ document.addEventListener('click',event=>{
+  const target=event.target.closest('.btn,.nav-cta');
+  if(target) burst(event.clientX||w/2,event.clientY||h/2);
+ });
+})();
+
 </script>
 </body>
 </html>
