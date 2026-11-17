@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101b32">
+<meta name="description" content="The Empyrean Palace, Makhdumpur — an elegant destination for weddings, receptions and celebrations.">
+<title>The Empyrean Palace | Makhdumpur</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+ --navy:#101b32;
+ --navy2:#1a2a45;
+ --gold:#c7a66a;
+ --gold-light:#e8d6ad;
+ --cream:#f8f6f1;
+ --white:#fff;
+ --text:#252525;
+ --muted:#777;
+ --border:#e9e3d8;
+ --shadow:0 18px 55px rgba(16,27,50,.11);
+ --serif:'Cormorant Garamond',serif;
+ --sans:'DM Sans',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{font-family:var(--sans);color:var(--text);background:#fff;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+img{display:block;max-width:100%}
+.container{width:min(1160px,90%);margin:auto}
+.section{padding:100px 0;position:relative}
+.section-label{color:#a8874e;text-transform:uppercase;letter-spacing:3px;font-size:10px;font-weight:700;margin-bottom:16px}
+.section-title{font-family:var(--serif);font-size:clamp(40px,5vw,62px);font-weight:600;line-height:1.02;color:var(--navy)}
+.section-desc{color:var(--muted);line-height:1.9;max-width:650px;margin-top:18px;font-size:13px}
+.center{text-align:center}
+.center .section-desc{margin-left:auto;margin-right:auto}
+.gold-line{width:55px;height:2px;background:var(--gold);margin:22px 0;position:relative}
+.gold-line:after{content:"";position:absolute;width:7px;height:7px;background:var(--gold);transform:rotate(45deg);right:-2px;top:-3px}
+.center .gold-line{margin:22px auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border:1px solid var(--gold);background:var(--gold);color:#fff;font-size:10px;letter-spacing:1.4px;text-transform:uppercase;font-weight:700;transition:.35s}
+.btn:hover{background:var(--navy);border-color:var(--navy);transform:translateY(-3px);box-shadow:0 10px 25px #101b3228}
+.btn-outline{background:transparent;color:#fff;border-color:rgba(255,255,255,.7)}
+.btn-outline:hover{background:#fff;color:var(--navy);border-color:#fff}
+.btn-dark{background:var(--navy);border-color:var(--navy)}
+.btn-dark:hover{background:var(--gold);border-color:var(--gold)}
+/* Decorative image treatment */
+.image-frame{position:relative;overflow:hidden;background:#eae5da;isolation:isolate}
+.image-frame img{width:100%;height:100%;object-fit:cover;object-position:center;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.image-frame:hover img{transform:scale(1.055)}
+.image-frame.image-missing{background:linear-gradient(135deg,#e8e0d2,#f8f4ec);display:flex;align-items:center;justify-content:center}
+.image-frame.image-missing:before{content:"✦";font-family:var(--serif);color:#b69a69;font-size:55px;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.image-frame.image-missing:after{content:"THE EMPYREAN PALACE";position:absolute;bottom:16px;left:0;width:100%;text-align:center;color:#8a795d;font-size:9px;letter-spacing:3px;font-weight:700}
+.image-frame.image-missing img{display:none}
+
+/* Header */
+header{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(16,27,50,.96);backdrop-filter:blur(14px);transition:.3s;border-bottom:1px solid rgba(255,255,255,.07)}
+.navbar{height:78px;display:flex;align-items:center;justify-content:space-between}
+.logo{color:#fff;display:flex;align-items:center;gap:11px}
+.logo-mark{font-family:var(--serif);color:var(--gold);font-size:37px;line-height:1}
+.logo-name{font-family:var(--serif);font-size:19px;letter-spacing:1.5px;line-height:1.05}
+.logo-name small{display:block;font-family:var(--sans);font-size:8px;letter-spacing:4px;color:var(--gold-light);margin-top:5px}
+.nav-links{display:flex;align-items:center;gap:25px;color:#eee;font-size:10px;text-transform:uppercase;letter-spacing:1.1px}
+.nav-links a{transition:.25s}
+.nav-links a:hover{color:var(--gold-light)}
+.nav-cta{padding:12px 17px;background:var(--gold);color:#fff!important}
+.menu-toggle{display:none;background:none;border:0;color:#fff;font-size:26px}
+header.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.23)}
+
+/* Hero */
+.hero{min-height:760px;height:100svh;max-height:950px;position:relative;background:var(--navy);display:flex;align-items:center;overflow:hidden}
+.hero-bg{position:absolute;inset:0}
+.hero-bg img{opacity:.58}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,14,29,.88),rgba(7,14,29,.49) 62%,rgba(7,14,29,.25)),linear-gradient(0deg,rgba(7,14,29,.4),transparent 50%)}
+.hero-content{position:relative;z-index:2;color:#fff;padding-top:65px;max-width:780px}
+.hero-kicker{color:var(--gold-light);font-size:10px;letter-spacing:4px;text-transform:uppercase;margin-bottom:25px}
+.hero h1{font-family:var(--serif);font-size:clamp(58px,8vw,105px);line-height:.91;font-weight:500;max-width:800px}
+.hero h1 span{color:var(--gold-light);font-style:italic}
+.hero-text{max-width:520px;color:#e2e2e2;font-size:13px;line-height:2;margin:28px 0 34px}
+.hero-actions{display:flex;gap:13px;flex-wrap:wrap}
+.hero-bottom{position:absolute;bottom:30px;left:0;width:100%;z-index:3;color:#eee;font-size:9px;letter-spacing:2px;text-transform:uppercase}
+.hero-bottom .container{display:flex;justify-content:space-between;gap:20px}
+.hero-bottom span{color:var(--gold-light)}
+.hero-scroll{position:absolute;right:5%;bottom:100px;color:#fff;font-size:9px;letter-spacing:2px;writing-mode:vertical-rl;display:flex;align-items:center;gap:12px}
+.hero-scroll:after{content:"";height:55px;width:1px;background:var(--gold)}
+
+/* Intro */
+.intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
+.intro-images{position:relative;padding:0 45px 45px 0}
+.intro-main{height:490px;box-shadow:var(--shadow)}
+.intro-small{position:absolute;width:48%;height:220px;right:0;bottom:0;border:9px solid white;box-shadow:var(--shadow)}
+.intro-copy p{font-size:13px;color:var(--muted);line-height:2;margin:18px 0}
+.signature{font-family:var(--serif);font-style:italic;font-size:27px;color:var(--gold);margin-top:25px}
+
+/* Stats */
+.stats{background:var(--navy);padding:42px 0;color:#fff;position:relative}
+.stats:before,.stats:after{content:"✦";position:absolute;color:#ffffff18;font-size:60px;top:50%;transform:translateY(-50%)}
+.stats:before{left:4%}.stats:after{right:4%}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.stat{text-align:center;border-right:1px solid rgba(255,255,255,.15)}
+.stat:last-child{border:0}
+.stat strong{display:block;font-family:var(--serif);font-size:46px;color:var(--gold-light);font-weight:500}
+.stat span{font-size:9px;text-transform:uppercase;letter-spacing:2px;color:#ddd}
+
+/* Venue */
+.venue-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:23px;margin-top:48px}
+.venue-card{background:#fff;box-shadow:var(--shadow);transition:.35s;border:1px solid #eee9df}
+.venue-card:hover{transform:translateY(-8px);box-shadow:0 25px 60px rgba(16,27,50,.15)}
+.venue-card .image-frame{height:260px}
+.venue-card-content{padding:27px}
+.venue-card h3{font-family:var(--serif);font-size:29px;color:var(--navy);margin-bottom:10px}
+.venue-card p{font-size:12px;line-height:1.9;color:var(--muted)}
+.floor-tag{font-size:9px;letter-spacing:2px;color:#a8874e;text-transform:uppercase;margin-bottom:11px}
+
+/* Experience */
+.experience{background:var(--cream)}
+.experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.experience-image{height:540px;box-shadow:var(--shadow)}
+.experience-list{margin-top:30px;display:grid;gap:21px}
+.experience-item{display:flex;gap:17px}
+.experience-icon{width:44px;height:44px;flex-shrink:0;border:1px solid var(--gold);color:#a8874e;display:grid;place-items:center;font-size:19px}
+.experience-item h4{color:var(--navy);font-size:13px;margin-bottom:6px}
+.experience-item p{font-size:11px;line-height:1.9;color:var(--muted)}
+
+/* Events */
+.events-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}
+.event-card{transition:.35s}
+.event-card:hover{transform:translateY(-5px)}
+.event-card .image-frame{height:295px}
+.event-card h3{font-family:var(--serif);color:var(--navy);font-size:25px;margin-top:16px}
+.event-card p{font-size:11px;color:var(--muted);line-height:1.8;margin-top:6px}
+
+/* Amenities */
+.amenities{background:var(--navy);color:#fff}
+.amenities .section-title{color:#fff}
+.amenities .section-desc{color:#c5cad2}
+.amenity-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(255,255,255,.13);margin-top:48px}
+.amenity{background:var(--navy);padding:31px 20px;text-align:center;transition:.3s}
+.amenity:hover{background:var(--navy2)}
+.amenity-icon{font-size:26px;color:var(--gold-light);margin-bottom:14px}
+.amenity h4{font-size:12px;margin-bottom:8px}
+.amenity p{font-size:10px;line-height:1.8;color:#b8bec8}
+
+/* Pricing */
+.price-panel{background:var(--cream);padding:58px;text-align:center;max-width:760px;margin:45px auto 0;border:1px solid var(--border);position:relative}
+.price-panel:before{content:"";position:absolute;inset:9px;border:1px solid #d9c7a5;pointer-events:none}
+.price-panel .price{font-family:var(--serif);color:var(--navy);font-size:65px}
+.price-panel .price small{font-family:var(--sans);font-size:12px;color:var(--muted)}
+.price-panel p{font-size:12px;color:var(--muted);line-height:1.9;margin:15px auto 25px;max-width:500px}
+
+/* Gallery */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;margin-top:42px}
+.gallery-item{cursor:pointer}
+.gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+.gallery-item:nth-child(5){grid-column:span 2}
+.gallery-item .image-frame{height:100%}
+.gallery-item:hover img{transform:scale(1.07)}
+
+/* Reviews */
+.reviews{background:var(--cream)}
+.review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:42px}
+.review{background:#fff;padding:31px;box-shadow:0 5px 25px rgba(0,0,0,.04);border-bottom:2px solid transparent;transition:.3s}
+.review:hover{border-color:var(--gold);transform:translateY(-5px)}
+.review-stars{color:#bd9650;letter-spacing:3px;margin-bottom:16px}
+.review p{font-family:var(--serif);font-size:21px;line-height:1.5;color:#343434}
+.review small{display:block;margin-top:20px;color:#a8874e;font-size:9px;letter-spacing:1px;text-transform:uppercase}
+
+/* Contact */
+.contact{background:var(--navy);color:#fff}
+.contact .section-title{color:#fff}
+.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:55px;margin-top:45px}
+.contact-info p{font-size:12px;color:#c5cad2;line-height:1.9;margin:20px 0}
+.contact-detail{padding:18px 0;border-bottom:1px solid rgba(255,255,255,.13)}
+.contact-detail span{display:block;color:var(--gold-light);font-size:9px;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+.contact-detail a,.contact-detail strong{font-size:13px;color:#fff;font-weight:500;line-height:1.8}
+.contact-form{background:#fff;color:var(--text);padding:36px;box-shadow:0 20px 55px rgba(0,0,0,.15)}
+.contact-form h3{font-family:var(--serif);font-size:34px;color:var(--navy);margin-bottom:22px}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.form-field{margin-bottom:14px}
+.form-field.full{grid-column:1/-1}
+.form-field label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1px;color:#777;margin-bottom:8px}
+.form-field input,.form-field select,.form-field textarea{width:100%;padding:14px;border:1px solid #e5e5e5;outline:none;font-size:11px;background:#fff;color:#333;border-radius:0}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:var(--gold)}
+.form-field textarea{resize:vertical;min-height:95px}
+
+/* Map */
+.map-wrap{height:360px;background:#eee}
+.map-wrap iframe{width:100%;height:100%;border:0;filter:grayscale(.25)}
+
+/* Footer */
+footer{background:#0a1325;color:#c5cad2;padding:48px 0 25px}
+.footer-top{display:flex;justify-content:space-between;gap:35px;flex-wrap:wrap;padding-bottom:38px}
+.footer-brand{max-width:340px}
+.footer-brand p{font-size:11px;line-height:2;margin-top:16px;color:#9da5b4}
+.footer-links h4{color:var(--gold-light);font-size:10px;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px}
+.footer-links a{display:block;font-size:11px;margin:11px 0;color:#c5cad2}
+.footer-links a:hover{color:var(--gold-light)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.12);padding-top:20px;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:9px;color:#8992a2}
+
+/* Floating buttons */
+.float-actions{position:fixed;right:20px;bottom:20px;z-index:900;display:grid;gap:10px}
+.float-btn{width:49px;height:49px;border-radius:50%;display:grid;place-items:center;color:#fff;font-size:21px;box-shadow:0 5px 18px rgba(0,0,0,.2);transition:.3s}
+.float-btn:hover{transform:scale(1.1)}
+.float-call{background:var(--navy)}
+.float-wa{background:#20b85a}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(0,0,0,.94);z-index:2000;display:none;align-items:center;justify-content:center;padding:25px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:90vw;max-height:85vh;object-fit:contain}
+.lightbox-close{position:absolute;top:20px;right:25px;color:#fff;background:none;border:0;font-size:35px}
+
+/* WhatsApp concierge */
+.chat-launcher{position:fixed;right:22px;bottom:88px;z-index:1200;background:#087e70;color:#fff;border:0;border-radius:30px;padding:14px 19px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 28px rgba(0,0,0,.2);font-size:10px;font-weight:700;letter-spacing:1px;transition:.3s}
+.chat-launcher:hover{background:#075e54;transform:translateY(-3px)}
+.chat-launch-icon{font-size:18px}
+.chat-window{position:fixed;right:22px;bottom:145px;width:min(385px,calc(100vw - 28px));height:min(590px,calc(100svh - 180px));z-index:1201;background:#efeae2;border-radius:15px;box-shadow:0 18px 65px rgba(0,0,0,.3);overflow:hidden;display:none;flex-direction:column}
+.chat-window.open{display:flex;animation:chatIn .25s ease}
+@keyframes chatIn{from{opacity:0;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+.chat-header{background:#075e54;color:#fff;padding:14px;display:flex;align-items:center;gap:11px;flex-shrink:0}
+.chat-avatar{width:40px;height:40px;border-radius:50%;background:#e4d3ad;color:#173047;display:grid;place-items:center;font-family:var(--serif);font-size:24px}
+.chat-person{flex:1}
+.chat-person strong{display:block;font-size:13px;font-weight:600}
+.chat-person small{display:block;color:#d1e9df;font-size:10px;margin-top:4px}
+.chat-close{background:transparent;color:#fff;border:0;font-size:23px;padding:4px 8px}
+.chat-messages{flex:1;overflow-y:auto;padding:16px 11px 12px;background-color:#efeae2;background-image:radial-gradient(rgba(150,135,112,.10) .7px,transparent .7px);background-size:12px 12px;display:flex;flex-direction:column;gap:9px}
+.chat-date{text-align:center;margin:3px auto 9px;background:#fff8dc;color:#777;font-size:9px;padding:6px 11px;border-radius:7px;box-shadow:0 1px 2px #0001}
+.chat-bubble{max-width:87%;padding:10px 11px 6px;border-radius:8px;position:relative;font-size:12px;line-height:1.6;box-shadow:0 1px 1px rgba(0,0,0,.08);overflow-wrap:anywhere;white-space:pre-wrap}
+.chat-bubble.bot{align-self:flex-start;background:#fff;border-top-left-radius:2px}
+.chat-bubble.user{align-self:flex-end;background:#d9fdd3;border-top-right-radius:2px}
+.chat-time{display:block;text-align:right;font-size:9px;color:#87918b;margin-top:4px}
+.chat-ticks{color:#53a7c8;font-size:11px;margin-left:3px}
+.chat-typing{align-self:flex-start;background:#fff;border-radius:8px;padding:11px 14px;display:none;gap:4px}
+.chat-typing.show{display:flex}
+.chat-typing i{width:5px;height:5px;background:#999;border-radius:50%;animation:typing 1s infinite}
+.chat-typing i:nth-child(2){animation-delay:.15s}
+.chat-typing i:nth-child(3){animation-delay:.3s}
+@keyframes typing{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-4px)}}
+.chat-quick{display:flex;gap:7px;flex-wrap:wrap;padding:8px 11px;background:#f7f4ef;border-top:1px solid #e5dfd5;max-height:100px;overflow:auto}
+.quick-btn{border:1px solid #128c7e;background:#fff;color:#08796d;border-radius:18px;padding:7px 11px;font-size:10px;transition:.2s}
+.quick-btn:hover{background:#d9fdd3}
+.chat-compose{display:flex;gap:8px;padding:10px;background:#f7f4ef;align-items:center;flex-shrink:0}
+.chat-compose input{flex:1;min-width:0;border:0;outline:none;background:#fff;border-radius:25px;padding:12px 15px;font-size:12px}
+.chat-send{width:40px;height:40px;border:0;border-radius:50%;background:#087e70;color:#fff;font-size:17px}
+.chat-footer-note{background:#f7f4ef;text-align:center;font-size:9px;color:#888;padding:0 8px 8px}
+
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .75s ease,transform .75s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+ .nav-links{gap:14px;font-size:9px}
+ .intro-grid,.experience-grid{gap:35px}
+ .events-grid{grid-template-columns:repeat(2,1fr)}
+ .venue-grid{grid-template-columns:repeat(2,1fr)}
+ .gallery-grid{grid-auto-rows:175px}
+}
+@media(max-width:700px){
+ .section{padding:72px 0}
+ .navbar{height:68px}
+ .menu-toggle{display:block}
+ .nav-links{display:none;position:absolute;top:68px;left:0;width:100%;background:var(--navy);padding:20px 5%;flex-direction:column;align-items:stretch;gap:0}
+ .nav-links.open{display:flex}
+ .nav-links a{padding:13px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:11px}
+ .nav-links .nav-cta{text-align:center;margin-top:12px}
+ .hero{min-height:690px;height:88svh}
+ .hero h1{font-size:61px}
+ .hero-text{font-size:12px}
+ .hero-bottom{font-size:8px}
+ .hero-bottom .container{flex-direction:column;gap:6px}
+ .hero-scroll{display:none}
+ .intro-grid,.experience-grid,.contact-grid{grid-template-columns:1fr}
+ .intro-grid{gap:35px}
+ .intro-main{height:360px}
+ .intro-images{padding-right:25px;padding-bottom:30px}
+ .intro-small{height:155px;border-width:6px}
+ .stats-grid{grid-template-columns:repeat(2,1fr);row-gap:28px}
+ .stat:nth-child(2){border:0}
+ .stat strong{font-size:36px}
+ .venue-grid{grid-template-columns:1fr}
+ .venue-card .image-frame{height:245px}
+ .experience-image{height:350px}
+ .amenity-grid{grid-template-columns:repeat(2,1fr)}
+ .events-grid{gap:20px 12px}
+ .event-card .image-frame{height:220px}
+ .event-card h3{font-size:21px}
+ .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:145px;gap:8px}
+ .gallery-item:nth-child(1){grid-column:span 2;grid-row:span 2}
+ .gallery-item:nth-child(5){grid-column:span 2}
+ .review-grid{grid-template-columns:1fr}
+ .price-panel{padding:38px 20px}
+ .price-panel .price{font-size:49px}
+ .contact-form{padding:24px 18px}
+ .form-grid{grid-template-columns:1fr}
+ .form-field.full{grid-column:auto}
+ .footer-top{flex-direction:column}
+ .chat-launcher{right:13px;bottom:78px;padding:12px 15px}
+ .chat-window{right:10px;bottom:135px;height:min(590px,calc(100svh - 160px))}
+ .float-actions{right:13px;bottom:13px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+
+/* =========================================
+   EMPYREAN PALACE — PREMIUM VISUAL FINISH
+   Responsive gallery + elegant 3D + glow
+========================================= */
+.gallery-grid{
+ display:grid !important;
+ grid-template-columns:repeat(4,minmax(0,1fr)) !important;
+ grid-auto-rows:clamp(175px,19vw,245px) !important;
+ grid-auto-flow:row dense !important;
+ align-items:stretch !important;
+ align-content:start !important;
+ gap:clamp(10px,1.25vw,16px) !important;
+ width:100% !important;
+}
+.gallery-grid > .gallery-item,
+.gallery-grid > *{
+ grid-column:auto / span 1 !important;
+ grid-row:auto / span 1 !important;
+ width:100% !important;
+ min-width:0 !important;
+ min-height:0 !important;
+ height:100% !important;
+ overflow:hidden !important;
+ position:relative;
+ border-radius:3px;
+}
+.gallery-grid > .gallery-item .image-frame{
+ width:100% !important;
+ height:100% !important;
+ min-height:0 !important;
+}
+.gallery-grid > .gallery-item img{
+ display:block !important;
+ width:100% !important;
+ height:100% !important;
+ object-fit:cover !important;
+ transition:transform .8s cubic-bezier(.2,.7,.2,1),filter .5s ease !important;
+}
+.gallery-grid > .gallery-item:hover img{
+ transform:scale(1.075) !important;
+ filter:saturate(1.12) contrast(1.04);
+}
+.gallery-grid > .gallery-item::after{
+ content:"";
+ position:absolute;
+ inset:0;
+ pointer-events:none;
+ opacity:0;
+ background:linear-gradient(135deg,rgba(232,214,173,.2),transparent 52%,rgba(16,27,50,.16));
+ transition:opacity .45s ease;
+}
+.gallery-grid > .gallery-item:hover::after{opacity:1}
+@media(max-width:900px){
+ .gallery-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important;grid-auto-rows:clamp(170px,25vw,225px) !important}
+}
+@media(max-width:700px){
+ .gallery-grid{
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  grid-auto-rows:clamp(155px,42vw,225px) !important;
+  gap:10px !important;
+ }
+ .gallery-grid > .gallery-item:last-child:nth-child(odd){grid-column:1 / -1 !important}
+}
+@media(max-width:380px){.gallery-grid{grid-auto-rows:155px !important;gap:8px !important}}
+
+/* Gentle depth and premium card lighting */
+.venue-card,.event-card,.review,.amenity,.price-panel,.contact-form{
+ transform-style:preserve-3d;
+ backface-visibility:hidden;
+ transition:transform .4s cubic-bezier(.2,.7,.2,1),box-shadow .4s ease,filter .4s ease;
+}
+@media(hover:hover) and (pointer:fine){
+ .venue-card:hover,.event-card:hover,.review:hover,.price-panel:hover{
+  box-shadow:0 24px 55px rgba(16,27,50,.17);
+ }
+ .amenity:hover{box-shadow:0 12px 28px rgba(0,0,0,.18)}
+}
+.btn,.nav-cta{position:relative;overflow:hidden}
+.btn::after,.nav-cta::after{
+ content:"";position:absolute;top:-60%;left:-120%;width:45%;height:220%;
+ transform:rotate(25deg);pointer-events:none;
+ background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+ transition:left .75s ease;
+}
+.btn:hover::after,.nav-cta:hover::after{left:150%}
+.chat-launcher{animation:empyreanChatGlow 3.8s ease-in-out infinite}
+@keyframes empyreanChatGlow{
+ 0%,100%{box-shadow:0 8px 25px rgba(0,0,0,.19)}
+ 50%{box-shadow:0 8px 32px rgba(199,166,106,.28),0 0 0 7px rgba(199,166,106,.07)}
+}
+.float-wa{animation:empyreanWaPulse 3s ease-in-out infinite}
+@keyframes empyreanWaPulse{
+ 0%,100%{box-shadow:0 5px 18px rgba(0,0,0,.2)}
+ 50%{box-shadow:0 5px 25px rgba(32,184,90,.35),0 0 0 8px rgba(32,184,90,.07)}
+}
+#empyreanFireworks{position:fixed;inset:0;width:100%;height:100%;z-index:850;pointer-events:none}
+@media(prefers-reduced-motion:reduce){
+ .chat-launcher,.float-wa{animation:none !important}
+}
+
+</style>
+</head>
+
+<body>
+
+<header id="header">
+ <div class="container navbar">
+  <a class="logo" href="#home">
+   <span class="logo-mark">✦</span>
+   <span class="logo-name">THE EMPYREAN PALACE<small>MAKHDUMPUR · BIHAR</small></span>
+  </a>
+  <button class="menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+  <nav class="nav-links" id="navLinks">
+   <a href="#home">Home</a>
+   <a href="#about">Our Palace</a>
+   <a href="#venue">The Venue</a>
+   <a href="#events">Celebrations</a>
+   <a href="#gallery">Gallery</a>
+   <a href="#contact" class="nav-cta">Enquire Now</a>
+  </nav>
+ </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+ <div class="hero-bg image-frame">
+  <img src="palace-hero.png" alt="The Empyrean Palace" data-fallback="true">
+ </div>
+ <div class="hero-overlay"></div>
+ <div class="container hero-content">
+  <div class="hero-kicker">A destination for unforgettable celebrations</div>
+  <h1>Moments Made<br><span>Magnificent.</span></h1>
+  <p class="hero-text">Celebrate life's most beautiful occasions at The Empyrean Palace. A thoughtfully designed venue where elegant spaces, warm hospitality and unforgettable memories come together.</p>
+  <div class="hero-actions">
+   <a href="#contact" class="btn">Book a Visit ↗</a>
+   <button class="btn btn-outline" onclick="openConcierge()">Plan Your Event</button>
+  </div>
+ </div>
+ <div class="hero-scroll">SCROLL TO DISCOVER</div>
+ <div class="hero-bottom"><div class="container"><div><span>✦</span> ESTABLISHED 2021</div><div>MAKHDUMPUR · JEHANABAD · BIHAR</div></div></div>
+</section>
+
+<section class="section" id="about">
+ <div class="container intro-grid">
+  <div class="intro-images reveal">
+   <div class="image-frame intro-main"><img src="palace-exterior.png" alt="Palace exterior" data-fallback="true"></div>
+   <div class="image-frame intro-small"><img src="palace-night.png" alt="Palace at night" data-fallback="true"></div>
+  </div>
+  <div class="intro-copy reveal">
+   <div class="section-label">Welcome to our palace</div>
+   <h2 class="section-title">Where Every Celebration Finds Its Place</h2>
+   <div class="gold-line"></div>
+   <p>Some occasions deserve more than an ordinary venue. At The Empyrean Palace, we bring together welcoming spaces, thoughtful arrangements and personal attention to make every celebration special.</p>
+   <p>From the first gathering to the final farewell, our team is here to help you create an experience that feels truly yours.</p>
+   <div class="signature">The Empyrean Palace</div>
+   <a href="#venue" class="btn btn-dark" style="margin-top:25px">Explore the Palace</a>
+  </div>
+ </div>
+</section>
+
+<section class="stats">
+ <div class="container stats-grid">
+  <div class="stat"><strong>2,500</strong><span>Sq. Ft. AC Banquet Hall</span></div>
+  <div class="stat"><strong>300</strong><span>Seated Guests</span></div>
+  <div class="stat"><strong>450</strong><span>Floating Capacity</span></div>
+  <div class="stat"><strong>12</strong><span>AC Guest Rooms</span></div>
+ </div>
+</section>
+
+<section class="section" id="venue">
+ <div class="container">
+  <div class="center reveal">
+   <div class="section-label">Explore the spaces</div>
+   <h2 class="section-title">Designed for Every Occasion</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">Three thoughtfully arranged levels, each serving a purpose in making your event comfortable and memorable.</p>
+  </div>
+  <div class="venue-grid">
+   <article class="venue-card reveal">
+    <div class="image-frame"><img src="ground-floor.png" alt="Ground floor dining area" data-fallback="true"></div>
+    <div class="venue-card-content"><div class="floor-tag">Ground Floor</div><h3>Dining & Catering</h3><p>A dedicated dining and catering space designed to welcome your guests with comfort and convenience.</p></div>
+   </article>
+   <article class="venue-card reveal">
+    <div class="image-frame"><img src="banquet-hall.png" alt="Main banquet hall" data-fallback="true"></div>
+    <div class="venue-card-content"><div class="floor-tag">First Floor</div><h3>The Main Celebration Hall</h3><p>An air-conditioned main hall for wedding ceremonies, receptions, stage arrangements and special gatherings.</p></div>
+   </article>
+   <article class="venue-card reveal">
+    <div class="image-frame"><img src="guest-room.png" alt="Guest room" data-fallback="true"></div>
+    <div class="venue-card-content"><div class="floor-tag">Second Floor</div><h3>Guest Accommodation</h3><p>Twelve air-conditioned guest rooms for added convenience and a more comfortable celebration.</p></div>
+   </article>
+  </div>
+ </div>
+</section>
+
+<section class="section experience">
+ <div class="container experience-grid">
+  <div class="image-frame experience-image reveal"><img src="wedding.png" alt="Wedding celebration" data-fallback="true"></div>
+  <div class="reveal">
+   <div class="section-label">The experience</div>
+   <h2 class="section-title">Every Detail, Thoughtfully Arranged</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">A celebration is made memorable by the little things. We offer flexible arrangements to help bring your vision together.</p>
+   <div class="experience-list">
+    <div class="experience-item"><div class="experience-icon">✦</div><div><h4>Elegant Event Spaces</h4><p>Indoor air-conditioned hall and an open-air event space.</p></div></div>
+    <div class="experience-item"><div class="experience-icon">❖</div><div><h4>Flexible Catering</h4><p>Vegetarian and non-vegetarian options, with outside caterer flexibility.</p></div></div>
+    <div class="experience-item"><div class="experience-icon">✧</div><div><h4>Personalised Decor</h4><p>Bespoke in-house decoration arrangements for your occasion.</p></div></div>
+    <div class="experience-item"><div class="experience-icon">◇</div><div><h4>Guest Convenience</h4><p>Guest rooms, dedicated parking and accessible facilities.</p></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="events">
+ <div class="container">
+  <div class="center reveal">
+   <div class="section-label">Celebrate with us</div>
+   <h2 class="section-title">A Place for Every Milestone</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">From intimate family gatherings to grand celebrations, make your next occasion memorable.</p>
+  </div>
+  <div class="events-grid">
+   <article class="event-card reveal"><div class="image-frame"><img src="wedding.png" alt="Wedding celebration" data-fallback="true"></div><h3>Weddings & Receptions</h3><p>Celebrate your new beginning in a beautiful setting.</p></article>
+   <article class="event-card reveal"><div class="image-frame"><img src="engagement.png" alt="Engagement event" data-fallback="true"></div><h3>Engagements</h3><p>Make your special announcement a cherished memory.</p></article>
+   <article class="event-card reveal"><div class="image-frame"><img src="birthday.png" alt="Birthday celebration" data-fallback="true"></div><h3>Birthdays & Anniversaries</h3><p>Bring friends and family together for the moments that matter.</p></article>
+   <article class="event-card reveal"><div class="image-frame"><img src="corporate.png" alt="Corporate event" data-fallback="true"></div><h3>Corporate Events</h3><p>Host seminars, business gatherings and special events.</p></article>
+  </div>
+ </div>
+</section>
+
+<section class="section amenities">
+ <div class="container">
+  <div class="center reveal">
+   <div class="section-label">Comfort meets convenience</div>
+   <h2 class="section-title">Thoughtful Amenities</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">The practical details that help make your event easier for you and your guests.</p>
+  </div>
+  <div class="amenity-grid">
+   <div class="amenity"><div class="amenity-icon">❄</div><h4>Air-Conditioned Hall</h4><p>Comfortable indoor event space.</p></div>
+   <div class="amenity"><div class="amenity-icon">⌂</div><h4>12 AC Guest Rooms</h4><p>On-site guest accommodation.</p></div>
+   <div class="amenity"><div class="amenity-icon">♧</div><h4>Open-Air Space</h4><p>Additional outdoor event area.</p></div>
+   <div class="amenity"><div class="amenity-icon">♙</div><h4>Dedicated Parking</h4><p>Car and bike parking facilities.</p></div>
+   <div class="amenity"><div class="amenity-icon">✦</div><h4>Custom Decoration</h4><p>Personalised in-house decor options.</p></div>
+   <div class="amenity"><div class="amenity-icon">♨</div><h4>Catering Flexibility</h4><p>Veg and non-veg arrangements.</p></div>
+   <div class="amenity"><div class="amenity-icon">◇</div><h4>Wheelchair Access</h4><p>Accessible venue facilities.</p></div>
+   <div class="amenity"><div class="amenity-icon">▣</div><h4>Digital Payments</h4><p>Card and digital payment options.</p></div>
+  </div>
+ </div>
+</section>
+
+<section class="section">
+ <div class="container center">
+  <div class="section-label">Plan your celebration</div>
+  <h2 class="section-title">A Beautiful Beginning Starts Here</h2>
+  <div class="gold-line"></div>
+  <div class="price-panel reveal">
+   <div class="section-label">Starting package</div>
+   <div class="price">₹74,500 <small>/ day</small></div>
+   <p>Every celebration is different. Contact our team to discuss your date, guest count and preferred arrangements for a suitable package.</p>
+   <button class="btn btn-dark" onclick="openConcierge()">Discuss Your Event ↗</button>
+  </div>
+ </div>
+</section>
+
+<section class="section" id="gallery">
+ <div class="container">
+  <div class="center reveal">
+   <div class="section-label">A glimpse of the palace</div>
+   <h2 class="section-title">Moments & Spaces</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">Explore the venue and discover a setting for your next celebration.</p>
+  </div>
+  <div class="gallery-grid">
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-exterior.png" alt="Palace exterior" data-fallback="true"></div></div>
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-entrance.png" alt="Palace entrance" data-fallback="true"></div></div>
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-stage.png" alt="Event stage" data-fallback="true"></div></div>
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-dining.png" alt="Dining area" data-fallback="true"></div></div>
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-hall.png" alt="Banquet hall" data-fallback="true"></div></div>
+   <div class="gallery-item reveal"><div class="image-frame"><img src="gallery-decor.png" alt="Event decoration" data-fallback="true"></div></div>
+  </div>
+ </div>
+</section>
+
+<section class="section reviews">
+ <div class="container">
+  <div class="center reveal">
+   <div class="section-label">Guest experiences</div>
+   <h2 class="section-title">Memories Worth Sharing</h2>
+   <div class="gold-line"></div>
+   <p class="section-desc">A celebration is special when your guests feel welcome and cared for.</p>
+  </div>
+  <div class="review-grid">
+   <article class="review reveal"><div class="review-stars">★★★★★</div><p>“A lovely venue for bringing family and friends together. The space and arrangements made our occasion special.”</p><small>Guest experience · Sample copy</small></article>
+   <article class="review reveal"><div class="review-stars">★★★★★</div><p>“A memorable setting for a family celebration. We appreciated the convenience of having everything in one place.”</p><small>Guest experience · Sample copy</small></article>
+   <article class="review reveal"><div class="review-stars">★★★★★</div><p>“A beautiful place to celebrate an important milestone with the people who matter most.”</p><small>Guest experience · Sample copy</small></article>
+  </div>
+  <p style="font-size:10px;color:#999;text-align:center;margin-top:18px">Replace these sample descriptions with genuine guest reviews before publishing.</p>
+ </div>
+</section>
+
+<section class="section contact" id="contact">
+ <div class="container">
+  <div class="section-label">Let's plan something beautiful</div>
+  <h2 class="section-title">Get in Touch</h2>
+  <div class="gold-line"></div>
+  <div class="contact-grid">
+   <div class="contact-info">
+    <p>Tell us a little about your celebration. Our team will be happy to help you explore the venue and discuss your requirements.</p>
+    <div class="contact-detail"><span>Call us</span><a href="tel:+919934556501">+91 99345 56501</a><br><a href="tel:+918789824297">+91 87898 24297</a></div>
+    <div class="contact-detail"><span>Visit us</span><strong>Makhdumpur-Barabar Road, Makhdumpur, Jehanabad, Bihar 804422</strong></div>
+    <div class="contact-detail"><span>Office hours</span><strong>Every day · 9:00 AM – 9:00 PM</strong></div>
+    <div class="contact-detail"><span>Instagram</span><a href="https://www.instagram.com/the_empyrean_palace/" target="_blank" rel="noopener">@the_empyrean_palace ↗</a></div>
+   </div>
+   <form class="contact-form" id="enquiryForm">
+    <h3>Make an Enquiry</h3>
+    <div class="form-grid">
+     <div class="form-field"><label>Your Name</label><input name="name" required placeholder="Full name"></div>
+     <div class="form-field"><label>Phone Number</label><input name="phone" required type="tel" placeholder="Your mobile number"></div>
+     <div class="form-field"><label>Event Type</label><select name="event" required><option value="">Select event</option><option>Wedding</option><option>Reception</option><option>Engagement</option><option>Birthday</option><option>Anniversary</option><option>Corporate Event</option><option>Other</option></select></div>
+     <div class="form-field"><label>Expected Guests</label><input name="guests" placeholder="e.g. 200"></div>
+     <div class="form-field"><label>Event Date</label><input name="date" type="date"></div>
+     <div class="form-field"><label>Budget</label><select name="budget"><option value="">Select budget</option><option>Below ₹1 lakh</option><option>₹1–2 lakh</option><option>₹2–4 lakh</option><option>₹4 lakh+</option><option>Not decided</option></select></div>
+     <div class="form-field full"><label>Anything else?</label><textarea name="message" placeholder="Tell us about your plans..."></textarea></div>
+     <div class="form-field full"><button type="submit" class="btn btn-dark" style="width:100%">Send Enquiry on WhatsApp ↗</button></div>
+    </div>
+   </form>
+  </div>
+ </div>
+</section>
+
+<div class="map-wrap">
+ <iframe title="Find The Empyrean Palace" loading="lazy" src="https://maps.google.com/maps?q=The%20Empyrean%20Palace%20Makhdumpur%20Jehanabad%20Bihar&t=&z=14&ie=UTF8&iwloc=&output=embed"></iframe>
+</div>
+</main>
+
+<footer>
+ <div class="container">
+  <div class="footer-top">
+   <div class="footer-brand">
+    <a class="logo" href="#home"><span class="logo-mark">✦</span><span class="logo-name">THE EMPYREAN PALACE<small>MAKHDUMPUR · BIHAR</small></span></a>
+    <p>A welcoming destination for weddings, celebrations and special occasions. Making life's beautiful moments even more memorable.</p>
+   </div>
+   <div class="footer-links"><h4>Explore</h4><a href="#about">Our Palace</a><a href="#venue">The Venue</a><a href="#events">Celebrations</a><a href="#gallery">Gallery</a></div>
+   <div class="footer-links"><h4>Get in Touch</h4><a href="tel:+919934556501">+91 99345 56501</a><a href="tel:+918789824297">+91 87898 24297</a><a href="#contact">Make an Enquiry</a><a href="https://www.instagram.com/the_empyrean_palace/" target="_blank" rel="noopener">Instagram ↗</a></div>
+  </div>
+  <div class="footer-bottom"><span>© <span id="year"></span> The Empyrean Palace. All rights reserved.</span><span>MAKHDUMPUR · JEHANABAD · BIHAR</span></div>
+ </div>
+</footer>
+
+<div class="float-actions">
+ <a class="float-btn float-call" href="tel:+919934556501" aria-label="Call us">☎</a>
+ <a class="float-btn float-wa" href="https://wa.me/919934556501" target="_blank" rel="noopener" aria-label="WhatsApp">◉</a>
+</div>
+
+<button class="chat-launcher" id="chatLauncher" onclick="toggleChat()">
+ <span class="chat-launch-icon">◉</span> CHAT WITH OUR TEAM
+</button>
+
+<div class="chat-window" id="chatWindow">
+ <div class="chat-header">
+  <div class="chat-avatar">✦</div>
+  <div class="chat-person"><strong>Empyrean Concierge</strong><small>● Online · Event assistance</small></div>
+  <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">×</button>
+ </div>
+ <div class="chat-messages" id="chatMessages">
+  <div class="chat-date">TODAY</div>
+ </div>
+ <div class="chat-typing" id="chatTyping"><i></i><i></i><i></i></div>
+ <div class="chat-quick" id="chatQuick"></div>
+ <form class="chat-compose" id="chatForm">
+  <input id="chatInput" type="text" placeholder="Type a message..." autocomplete="off" aria-label="Your message">
+  <button class="chat-send" type="submit" aria-label="Send message">➤</button>
+ </form>
+ <div class="chat-footer-note">Website concierge · Continue your enquiry on WhatsApp</div>
+</div>
+
+<div class="lightbox" id="lightbox">
+ <button class="lightbox-close" onclick="closeLightbox()">×</button>
+ <img id="lightboxImage" src="" alt="Gallery preview">
+</div>
+
+<script>
+/* BASIC WEBSITE FUNCTIONS */
+document.getElementById('year').textContent=new Date().getFullYear();
+
+const header=document.getElementById('header');
+window.addEventListener('scroll',()=>header.classList.toggle('scrolled',window.scrollY>30));
+
+const menuToggle=document.getElementById('menuToggle');
+const navLinks=document.getElementById('navLinks');
+menuToggle.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* PNG IMAGE LOADING AND FALLBACK */
+document.querySelectorAll('img[data-fallback="true"]').forEach(img=>{
+ img.addEventListener('error',()=>{
+  const frame=img.closest('.image-frame');
+  if(frame)frame.classList.add('image-missing');
+  img.removeAttribute('src');
+ });
+});
+
+/* REVEAL ANIMATIONS */
+const observer=new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('visible');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+/* GALLERY LIGHTBOX */
+document.querySelectorAll('.gallery-item img').forEach(img=>{
+ img.addEventListener('click',()=>{
+  if(!img.getAttribute('src'))return;
+  document.getElementById('lightboxImage').src=img.src;
+  document.getElementById('lightbox').classList.add('open');
+ });
+});
+function closeLightbox(){document.getElementById('lightbox').classList.remove('open')}
+document.getElementById('lightbox').addEventListener('click',e=>{
+ if(e.target.id==='lightbox')closeLightbox();
+});
+document.addEventListener('keydown',e=>{
+ if(e.key==='Escape')closeLightbox();
+});
+
+/* MAIN ENQUIRY FORM */
+document.getElementById('enquiryForm').addEventListener('submit',function(e){
+ e.preventDefault();
+ const data=new FormData(this);
+ const msg=`Hello The Empyrean Palace!
+
+I would like to enquire about an event.
+
+Name: ${data.get('name')}
+Phone: ${data.get('phone')}
+Event: ${data.get('event')}
+Expected guests: ${data.get('guests')||'Not specified'}
+Date: ${data.get('date')||'Not decided'}
+Budget: ${data.get('budget')||'Not specified'}
+Additional details: ${data.get('message')||'None'}
+
+Please share more details. Thank you!`;
+ window.open('https://wa.me/919934556501?text='+encodeURIComponent(msg),'_blank');
+});
+
+/* CONVERSATIONAL EVENT CONCIERGE */
+const chatWindow=document.getElementById('chatWindow');
+const chatMessages=document.getElementById('chatMessages');
+const chatTyping=document.getElementById('chatTyping');
+const chatQuick=document.getElementById('chatQuick');
+const chatInput=document.getElementById('chatInput');
+
+let chatStarted=false;
+let chatStep=0;
+let pendingDate=false;
+let pendingEdit=false;
+
+let chatAnswers={
+ name:'',event:'',guests:'',date:'',decor:'',
+ catering:'',rooms:'',budget:'',phone:''
+};
+
+function currentTime(){
+ return new Date().toLocaleTimeString('en-IN',{
+  hour:'2-digit',minute:'2-digit',hour12:true
+ });
+}
+
+function toggleChat(){
+ const open=chatWindow.classList.toggle('open');
+ if(open){
+  document.getElementById('chatLauncher').style.display='none';
+  if(!chatStarted){
+   chatStarted=true;
+   setTimeout(()=>{
+    botMessage("Hello! 👋 Welcome to The Empyrean Palace.\n\nIt's lovely to have you here. I'm your event concierge. I'd be happy to help you plan a beautiful celebration.\n\nFirst, may I know your name?");
+   },450);
+  }
+  setTimeout(()=>chatInput.focus(),300);
+ }else{
+  document.getElementById('chatLauncher').style.display='flex';
+ }
+}
+
+function openConcierge(){
+ if(!chatWindow.classList.contains('open'))toggleChat();
+}
+
+function scrollChat(){
+ chatMessages.scrollTop=chatMessages.scrollHeight;
+}
+
+function addBubble(text,type){
+ const bubble=document.createElement('div');
+ bubble.className='chat-bubble '+type;
+
+ const content=document.createElement('span');
+ content.textContent=text;
+ bubble.appendChild(content);
+
+ const time=document.createElement('small');
+ time.className='chat-time';
+ time.textContent=currentTime();
+
+ if(type==='user'){
+  const ticks=document.createElement('span');
+  ticks.className='chat-ticks';
+  ticks.textContent=' ✓✓';
+  time.appendChild(ticks);
+ }
+
+ bubble.appendChild(time);
+ chatMessages.appendChild(bubble);
+ scrollChat();
+}
+
+function botMessage(text,quickOptions=[],delay=850){
+ chatTyping.classList.add('show');
+ chatQuick.innerHTML='';
+ scrollChat();
+
+ setTimeout(()=>{
+  chatTyping.classList.remove('show');
+  addBubble(text,'bot');
+
+  quickOptions.forEach(option=>{
+   const btn=document.createElement('button');
+   btn.className='quick-btn';
+   btn.textContent=option;
+   btn.addEventListener('click',()=>sendUserMessage(option));
+   chatQuick.appendChild(btn);
+  });
+ },delay);
+}
+
+function sendUserMessage(text){
+ const message=(text||'').trim();
+ if(!message)return;
+
+ chatQuick.innerHTML='';
+ addBubble(message,'user');
+ chatInput.value='';
+ processAnswer(message);
+}
+
+document.getElementById('chatForm').addEventListener('submit',e=>{
+ e.preventDefault();
+ sendUserMessage(chatInput.value);
+});
+
+function startConversationAgain(){
+ chatAnswers={
+  name:'',event:'',guests:'',date:'',decor:'',
+  catering:'',rooms:'',budget:'',phone:''
+ };
+ chatStep=0;
+ pendingDate=false;
+ pendingEdit=false;
+ botMessage("Of course! Let's start again. 😊\n\nMay I know your name?");
+}
+
+function askNext(){
+ switch(chatStep){
+  case 0:
+   chatStep=1;
+   botMessage(`Lovely to meet you, ${chatAnswers.name}! 😊\n\nWhat kind of celebration are you planning?`,[
+    'Wedding','Reception','Engagement','Birthday',
+    'Anniversary','Corporate event','Other'
+   ]);
+   break;
+
+  case 1:
+   chatStep=2;
+   botMessage("That sounds wonderful! ✨\n\nApproximately how many guests are you expecting?",[
+    'Under 100','100–200 guests','200–300 guests',
+    '300–450 guests','Not sure yet'
+   ]);
+   break;
+
+  case 2:
+   chatStep=3;
+   botMessage("Got it. We'll keep your guest count in mind.\n\nDo you have a preferred event date?",[
+    'I have a date','Date not decided'
+   ]);
+   break;
+
+  case 3:
+   chatStep=4;
+   botMessage("Perfect. And what kind of decoration are you imagining?",[
+    'Simple & elegant','Traditional',
+    'Grand & luxurious','Need suggestions'
+   ]);
+   break;
+
+  case 4:
+   chatStep=5;
+   botMessage("Beautiful choice!\n\nWhat about catering? Do you have a preference?",[
+    'Vegetarian','Non-vegetarian','Both veg & non-veg',
+    'Outside caterer','Not decided'
+   ]);
+   break;
+
+  case 5:
+   chatStep=6;
+   botMessage("Understood. We also have 12 air-conditioned guest rooms.\n\nWould you need accommodation for your guests?",[
+    'Yes, I need rooms','No, not required','Need details'
+   ]);
+   break;
+
+  case 6:
+   chatStep=7;
+   botMessage("One last planning detail. Do you have an approximate budget in mind?",[
+    'Below ₹1 lakh','₹1–2 lakh','₹2–4 lakh',
+    '₹4 lakh+','Not decided'
+   ]);
+   break;
+
+  case 7:
+   chatStep=8;
+   botMessage("Thank you! ❤️\n\nMay I have your mobile number so our team can get in touch with you? You can also type 'skip'.");
+   break;
+
+  case 8:
+   chatStep=9;
+   showSummary();
+   break;
+ }
+}
+
+function processAnswer(message){
+ const lower=message.toLowerCase();
+
+ if(lower==='start again'||lower==='restart'){
+  startConversationAgain();
+  return;
+ }
+
+ if(lower.includes('send enquiry')||lower.includes('send my enquiry')){
+  sendSummaryToWhatsApp();
+  return;
+ }
+
+ if(lower.includes('change something')||lower.includes('edit')){
+  botMessage("Of course! Which detail would you like to change?",[
+   'Event type','Guest count','Event date','Decoration',
+   'Catering','Guest rooms','Budget','Keep everything'
+  ]);
+  pendingEdit=true;
+  return;
+ }
+
+ if(pendingEdit){
+  pendingEdit=false;
+  const editMap={
+   'event type':1,
+   'guest count':2,
+   'event date':3,
+   'decoration':4,
+   'catering':5,
+   'guest rooms':6,
+   'budget':7
+  };
+  if(lower==='keep everything'){
+   showSummary();
+   return;
+  }
+  if(editMap[lower]!==undefined){
+   chatStep=editMap[lower];
+   const prompts={
+    1:["What kind of celebration are you planning?",['Wedding','Reception','Engagement','Birthday','Anniversary','Corporate event','Other']],
+    2:["Approximately how many guests are you expecting?",['Under 100','100–200 guests','200–300 guests','300–450 guests','Not sure yet']],
+    3:["Do you have a preferred event date?",['I have a date','Date not decided']],
+    4:["What kind of decoration are you imagining?",['Simple & elegant','Traditional','Grand & luxurious','Need suggestions']],
+    5:["What about catering?",['Vegetarian','Non-vegetarian','Both veg & non-veg','Outside caterer','Not decided']],
+    6:["Would you need guest accommodation?",['Yes, I need rooms','No, not required','Need details']],
+    7:["What is your approximate budget?",['Below ₹1 lakh','₹1–2 lakh','₹2–4 lakh','₹4 lakh+','Not decided']]
+   };
+   botMessage(prompts[chatStep][0],prompts[chatStep][1]);
+   return;
+  }
+ }
+
+ if(chatStep===0){
+  chatAnswers.name=message;
+  askNext();
+  return;
+ }
+
+ if(chatStep===1){
+  chatAnswers.event=message;
+  askNext();
+  return;
+ }
+
+ if(chatStep===2){
+  chatAnswers.guests=message;
+  askNext();
+  return;
+ }
+
+ if(chatStep===3){
+  if(lower.includes('i have a date')){
+   pendingDate=true;
+   botMessage("Lovely! Please type your preferred date. For example: 15 December 2026.");
+   return;
+  }
+  chatAnswers.date=message.includes('not decided')?'Not decided':message;
+  askNext();
+  return;
+ }
+
+ if(pendingDate){
+  chatAnswers.date=message;
+  pendingDate=false;
+  askNext();
+  return;
+ }
+
+ if(chatStep===4){chatAnswers.decor=message;askNext();return}
+ if(chatStep===5){chatAnswers.catering=message;askNext();return}
+ if(chatStep===6){chatAnswers.rooms=message;askNext();return}
+ if(chatStep===7){chatAnswers.budget=message;askNext();return}
+
+ if(chatStep===8){
+  chatAnswers.phone=lower==='skip'?'Not provided':message;
+  askNext();
+  return;
+ }
+
+ if(chatStep===9){
+  botMessage("No problem. You can send your enquiry to our team on WhatsApp, or start again whenever you like.",[
+   'Send enquiry on WhatsApp','Start again'
+  ]);
+  return;
+ }
+
+ botMessage("Thanks for sharing that. 😊 Would you like to send your enquiry to our team?",[
+  'Send enquiry on WhatsApp','Start again'
+ ]);
+}
+
+function showSummary(){
+ const summary=`Thank you, ${chatAnswers.name}! ❤️
+
+Here's what I've gathered for your celebration:
+
+✦ Event: ${chatAnswers.event}
+✦ Guests: ${chatAnswers.guests}
+✦ Preferred date: ${chatAnswers.date}
+✦ Decoration: ${chatAnswers.decor}
+✦ Catering: ${chatAnswers.catering}
+✦ Guest rooms: ${chatAnswers.rooms}
+✦ Budget: ${chatAnswers.budget}
+✦ Contact: ${chatAnswers.phone}
+
+Our team can help you discuss the venue, availability and package details.
+
+Would you like me to send this enquiry to our WhatsApp team?`;
+
+ botMessage(summary,[
+  'Yes, send my enquiry',
+  'I want to change something'
+ ],1000);
+ chatStep=9;
+}
+
+function sendSummaryToWhatsApp(){
+ const msg=`Hello The Empyrean Palace! I chatted with your website concierge and would like to discuss an event.
+
+Name: ${chatAnswers.name}
+Event: ${chatAnswers.event}
+Expected guests: ${chatAnswers.guests}
+Preferred date: ${chatAnswers.date}
+Decoration: ${chatAnswers.decor}
+Catering: ${chatAnswers.catering}
+Guest rooms: ${chatAnswers.rooms}
+Budget: ${chatAnswers.budget}
+Contact number: ${chatAnswers.phone}
+
+Please contact me to discuss availability and packages. Thank you!`;
+
+ window.open(
+  'https://wa.me/919934556501?text='+encodeURIComponent(msg),
+  '_blank'
+ );
+
+ botMessage("Your enquiry is ready to continue on WhatsApp. Thank you for considering The Empyrean Palace! ✨",[],600);
+}
+
+
+/* =========================================
+   PREMIUM 3D TILT + OCCASIONAL FIREWORKS
+   Independent of the existing concierge code
+========================================= */
+(function empyreanPremiumEffects(){
+ 'use strict';
+ const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ const finePointer=window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+
+ /* Subtle pointer-controlled 3D tilt on larger screens */
+ if(!reduced && finePointer){
+  document.querySelectorAll('.venue-card,.event-card,.review,.amenity').forEach(card=>{
+   card.addEventListener('pointermove',event=>{
+    const rect=card.getBoundingClientRect();
+    const px=(event.clientX-rect.left)/rect.width;
+    const py=(event.clientY-rect.top)/rect.height;
+    const ry=(px-.5)*4.5;
+    const rx=(.5-py)*4.5;
+    card.style.transform=`perspective(1100px) rotateX(${rx}deg) rotateY(${ry}deg) translateY(-4px)`;
+   });
+   card.addEventListener('pointerleave',()=>{card.style.transform=''});
+  });
+ }
+
+ /* Respect reduced-motion and avoid running canvas animation unnecessarily */
+ if(reduced || !document.body) return;
+ const canvas=document.createElement('canvas');
+ canvas.id='empyreanFireworks';
+ canvas.setAttribute('aria-hidden','true');
+ document.body.appendChild(canvas);
+ const ctx=canvas.getContext('2d');
+ if(!ctx){canvas.remove();return;}
+ let w=0,h=0,dpr=1,particles=[],raf=0;
+ const palette=['#e8d6ad','#c7a66a','#fff4d5','#ffffff','#f0cf83'];
+ function resize(){
+  w=window.innerWidth;h=window.innerHeight;dpr=Math.min(window.devicePixelRatio||1,1.5);
+  canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+  canvas.style.width=w+'px';canvas.style.height=h+'px';
+  ctx.setTransform(dpr,0,0,dpr,0,0);
+ }
+ resize();window.addEventListener('resize',resize,{passive:true});
+ function burst(x,y){
+  const count=w<600?24:34;
+  for(let i=0;i<count;i++){
+   const a=(Math.PI*2*i)/count;
+   const speed=1.1+Math.random()*2.7;
+   particles.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,
+    life:1,decay:.012+Math.random()*.012,size:1+Math.random()*1.7,
+    color:palette[Math.floor(Math.random()*palette.length)]});
+  }
+  if(!raf) animate();
+ }
+ function animate(){
+  ctx.clearRect(0,0,w,h);
+  particles=particles.filter(p=>p.life>0);
+  for(const p of particles){
+   p.x+=p.vx;p.y+=p.vy;p.vx*=.986;p.vy=p.vy*.986+.018;p.life-=p.decay;
+   ctx.globalAlpha=Math.max(0,p.life);ctx.fillStyle=p.color;
+   ctx.shadowBlur=8;ctx.shadowColor=p.color;
+   ctx.beginPath();ctx.arc(p.x,p.y,p.size,0,Math.PI*2);ctx.fill();
+  }
+  ctx.globalAlpha=1;ctx.shadowBlur=0;
+  if(particles.length){raf=requestAnimationFrame(animate)}
+  else{cancelAnimationFrame(raf);raf=0;ctx.clearRect(0,0,w,h)}
+ }
+ function gentleBurst(){
+  if(!document.hidden) burst(w*(.2+Math.random()*.6),h*(.14+Math.random()*.3));
+ }
+ /* One small welcome sparkle, then rare celebratory bursts */
+ window.setTimeout(gentleBurst,3200);
+ (function schedule(){
+  window.setTimeout(()=>{gentleBurst();schedule()},26000+Math.random()*18000);
+ })();
+ /* Tiny celebratory burst when a primary CTA is clicked */
+ document.addEventListener('click',event=>{
+  const target=event.target.closest('.btn,.nav-cta');
+  if(target) burst(event.clientX||w/2,event.clientY||h/2);
+ });
+})();
+
+</script>
+</body>
+</html>
